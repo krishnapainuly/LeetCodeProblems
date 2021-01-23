@@ -1,3 +1,4 @@
+package com.problems.sum;
 /**
  * Given an array of integers, return indices of the two numbers such that they add up to a specific target.
  * You may assume that each input would have exactly one solution, and you may not use the same element twice.
@@ -13,6 +14,7 @@ public class TwoSum {
         int ar[] = { 5, 4, 2, 6, 7, 1 };
 
         int[] output = solution.twoSum(ar, 8);
+        System.out.println(ar);
         System.out.println(output[0] + ":" + output[1]);
     }
 }

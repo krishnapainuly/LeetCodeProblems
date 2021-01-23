@@ -1,3 +1,4 @@
+package com.problems.sum;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -18,12 +19,6 @@ public class ThreeSum {
         int array_nums[] = { -1, 0, 1, 2, -1, -4 };
         ThreeSumSolution sol = new ThreeSumSolution();
         List<List<Integer>> threeSum = sol.threeSum(array_nums);
-        threeSum.forEach(sum -> {
-            sum1 -> {
-                sum1.
-            }
-        });
-        System.out.println();
     }
 }
 
