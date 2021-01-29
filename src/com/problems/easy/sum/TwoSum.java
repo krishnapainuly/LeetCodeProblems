@@ -1,4 +1,4 @@
-package com.problems.sum;
+package com.problems.easy.sum;
 
 import java.util.HashMap;
 import java.util.Map;
