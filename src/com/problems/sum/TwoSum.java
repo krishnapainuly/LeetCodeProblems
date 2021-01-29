@@ -1,4 +1,9 @@
 package com.problems.sum;
+
+import java.util.HashMap;
+import java.util.Map;
+
+// https://leetcode.com/problems/two-sum/
 /**
  * Given an array of integers, return indices of the two numbers such that they add up to a specific target.
  * You may assume that each input would have exactly one solution, and you may not use the same element twice.
@@ -13,7 +18,8 @@ public class TwoSum {
         TwoSumSolution solution = new TwoSumSolution();
         int ar[] = { 5, 4, 2, 6, 7, 1 };
 
-        int[] output = solution.twoSum(ar, 8);
+//        int[] output = solution.twoSumBruteForce(ar, 8);
+        int[] output = solution.twoSumIndexes(ar, 8);
         System.out.println(ar);
         System.out.println(output[0] + ":" + output[1]);
     }
@@ -21,7 +27,7 @@ public class TwoSum {
 
 class TwoSumSolution {
 
-    public int[] twoSum(int[] nums, int target) {
+    public int[] twoSumBruteForce(int[] nums, int target) {
         int targetNums[] = new int[3];
         for (int index = 0; index < nums.length - 1; index++) {
             for (int index2 = index + 1; index2 < nums.length; index2++) {
@@ -33,5 +39,17 @@ class TwoSumSolution {
             }
         }
         return targetNums;
+    }
+    public int[] twoSumIndexes(int[] nums, int target) {
+    	Map<Integer, Integer> numDiff = new HashMap<>();
+    	for(int index =0; index< nums.length; index++) {
+    		int diff = target - nums[index];
+    		if(numDiff.containsKey(diff)) {
+    			return new int[] {numDiff.get(diff), index};
+    		}else {
+    			numDiff.put(nums[index], index);
+    		}
+    	}
+    	throw new IllegalArgumentException("Two sum not found");
     }
 }
